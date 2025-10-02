@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chimasha - Ecommerce</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="" alt="Chimasha logo">
+            <span class="brand-name">Chimasha</span>
+        </div>
+    <div class="top-bar">
+        <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search...">
+        </div>
+        <!-- Price range -->
+
+        <div class="filter">
+        <label for="prceSelect">Price range</label>
+        <select name="Price" id="priceSelect">
+            <option value="all">All</option>
+            <option value="0-1000">₹0-₹1000</option>
+            <option value="1000-5000">₹1000- ₹5000</option>
+            <option value="5000-20000">₹5000- ₹20000</option>
+            <option value="20000-60000">₹20000- ₹60000</option>
+        </select>
+        </div>
+    </div>
+    </header>
+    <nav class="categories">
+        <a href="#" data-category="all"><i class="fa-solid fa-heart"></i><span>For You</span></a>
+        <a href="#" data-category="accessories"><i class="fa-solid fa-gem"></i><span>Accessories</span></a>
+        <a href="#" data-category="electronics"><i class="fa-solid fa-tv"></i><span>Electronics</span></a>
+        <a href="#" data-category="fashion"><i class="fa-solid fa-shirt"></i><span>Fashion</span></a>
+    </nav>
+    <main>
+        <div class="product-grid">
+            <!--Products will load here using JS-->
+        </div>
+    </main>
+    <footer>
+        <a href="#"><i class="fa-solid fa-house"></i><span>Home</span></a>
+        <a href="#"><i class="fa-solid fa-user"></i><span>Profile</span></a>
+        <a href="#"><i class="fa-solid fa-cart-shopping"></i><span>Cart</span></a>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
