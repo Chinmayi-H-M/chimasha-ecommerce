@@ -28,7 +28,10 @@ function renderProducts(filterCategory="all"){
                     class="image"/>
                     <h1 class="name">${product.title}</h1>
                     <p class="amount">₹ ${product.amount}</p>
-                    <button class="buy-btn">Buy Now</button>
+                    <div class="button-style">
+                       <button class="buy-btn">Buy Now</button>
+                       <button class="cart-button">Add to cart</button>
+                    </div>
             </div>`
     grid.innerHTML+=html;
         }
