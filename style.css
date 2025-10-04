@@ -87,6 +87,12 @@ main{
     background-color: white; 
     margin-top:75px;
 }
+.category:hover{
+    background-color:black;
+    border-color:#888;
+    transform:scale(1.05);
+    color:white;
+}
 .categories a{
     text-decoration:none;
     color:black;
