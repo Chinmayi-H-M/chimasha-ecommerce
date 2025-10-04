@@ -17,6 +17,42 @@ const products=[
         amount:34000,
         category:"fashion"
     },
+    {
+        image:"shoe.jpg",
+        title:"Running shoes",
+        amount:34000,
+        category:"fashion"
+    },
+    {
+        image:"glasses.jpg",
+        title:"Sunglasses",
+        amount:500,
+        category:"accesorries"
+    },
+    {
+        image:"headphones.jpeg",
+        title:"Wireless Headphones",
+        amount:3400,
+        category:"electronics"
+    },
+    {
+        image:"smartwatch.jpeg",
+        title:"Smart Watch",
+        amount:2999,
+        category:"electronics"
+    },
+    {
+        image:"leatherbag.jpeg",
+        title:"Leather Handbag",
+        amount:3499,
+        category:"fashion"
+    },
+    {
+        image:"necklace.jpeg",
+        title:"Necklace",
+        amount:1199,
+        category:"accessories"
+    }
 ]
 function renderProducts(filterCategory="all"){
     const grid = document.querySelector(".product-grid");
