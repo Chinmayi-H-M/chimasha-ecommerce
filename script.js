@@ -2,8 +2,6 @@ const headerHeight= document.querySelector("header").offsetHeight;
 const categoriesHeight= document.querySelector(".categories").offsetHeight;
 document.querySelector("main").style.marginTop =(headerHeight+categoriesHeight) +"px";
 
-//productsDescription("https://res.cloudinary.com/dkguge6rw/image/upload/v1758630054/Screenshot_2025-09-23_173813_t0r7zg.png", "Laptops and Gadgets", 34000)
-//productsDescription("https://res.cloudinary.com/dkguge6rw/image/upload/v1758896477/Screenshot_2025-09-23_173916_xrart5.png", "Fashion", 3400)
 const products=[
     {
         image:"https://res.cloudinary.com/dkguge6rw/image/upload/v1758630054/Screenshot_2025-09-23_173813_t0r7zg.png",
@@ -27,7 +25,7 @@ const products=[
         image:"glasses.jpg",
         title:"Sunglasses",
         amount:500,
-        category:"accesorries"
+        category:"accessorries"
     },
     {
         image:"headphones.jpeg",
@@ -66,7 +64,11 @@ function renderProducts(filterCategory="all"){
                     <p class="amount">₹ ${product.amount}</p>
                     <div class="button-style">
                        <button class="buy-btn">Buy Now</button>
-                       <button class="cart-button">Add to cart</button>
+                       <button class="cart-button"
+                       data-title="${product.title}"
+                       data-amount="${product.amount}"
+                       data-image="${product.image}">
+                       Add to cart</button>
                     </div>
             </div>`
     grid.innerHTML+=html;
@@ -82,3 +84,18 @@ document.querySelectorAll(".categories a").forEach (link => {
     });
 });
 renderProducts("all");
+let cart=[];
+document.addEventListener("click", function(e){
+    if(e.target.classList.contains("cart-button")){
+        console.log(e.target.classList);
+        const title=e.target.getAttribute("data-title");
+        const amount=e.target.getAttribute("data-amount");
+        const image=e.target.getAttribute("data-image");
+
+        const product={title,amount,image};
+        cart.push(product);
+
+        alert(`${title} added to cart!`);
+
+}
+})
