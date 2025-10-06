@@ -210,3 +210,13 @@ footer a i{
     gap:10px;
     margin:10px 0px 20px 0px;
 }
+.cart-container{
+    margin:10px;
+}
+.cart-amount{
+    font-size:25px;
+    padding:0 0 10px 20px;
+}
+.cart-btn-page{
+    margin-left:20px;
+}

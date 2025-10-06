@@ -93,9 +93,12 @@ document.addEventListener("click", function(e){
         const image=e.target.getAttribute("data-image");
 
         const product={title,amount,image};
+        let cart=JSON.parse(localStorage.getItem("cart"))||[];
         cart.push(product);
+
+        localStorage.setItem("cart", JSON.stringify(cart));
 
         alert(`${title} added to cart!`);
 
 }
-})
+});
