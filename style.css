@@ -210,13 +210,31 @@ footer a i{
     gap:10px;
     margin:10px 0px 20px 0px;
 }
-.cart-container{
-    margin:10px;
-}
 .cart-amount{
     font-size:25px;
-    padding:0 0 10px 20px;
+    padding:0 0 10px 40px;
 }
 .cart-btn-page{
     margin-left:20px;
+}
+.name-cart{
+    font-size:20px;
+    padding:10px 0px 10px 40px;
+}
+.cart-container{
+    padding:10px;
+    background-color: gainsboro;
+    margin:10px;
+    border-radius:10px;
+
+}
+.cart-btns{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:20px
+}
+.cart{
+    padding:20px;
 }
