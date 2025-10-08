@@ -16,47 +16,59 @@ const products=[
         category:"fashion"
     },
     {
-        image:"shoe.jpg",
+        image:"images\\shoe.jpg",
         title:"Running shoes",
         amount:34000,
         category:"fashion"
     },
     {
-        image:"glasses.jpg",
+        image:"images\\glasses.jpg",
         title:"Sunglasses",
         amount:500,
         category:"accessorries"
     },
     {
-        image:"headphones.jpeg",
+        image:"images\\headphones.jpeg",
         title:"Wireless Headphones",
         amount:3400,
         category:"electronics"
     },
     {
-        image:"smartwatch.jpeg",
+        image:"images\\smartwatch.jpeg",
         title:"Smart Watch",
         amount:2999,
         category:"electronics"
     },
     {
-        image:"leatherbag.jpeg",
+        image:"images\\leatherbag.jpeg",
         title:"Leather Handbag",
         amount:3499,
         category:"fashion"
     },
     {
-        image:"necklace.jpeg",
+        image:"images\\necklace.jpeg",
         title:"Necklace",
         amount:1199,
         category:"accessories"
     }
-]
-function renderProducts(filterCategory="all"){
+];
+
+const grid= document.querySelector(".product-grid");
+const priceSelect= document.getElementById("priceSelect");
+let category ="all";
+
+function renderProducts(filterCategory="all",priceRange="all"){
     const grid = document.querySelector(".product-grid");
     grid.innerHTML="";
     products.forEach(product => {
-        if(filterCategory ==="all" || product.category=== filterCategory){
+        const matchesCategory = (filterCategory ==="all" || product.category === filterCategory);
+        let matchesPrice= true;
+
+        if (priceRange !== "all"){
+            const [min,max]= priceRange.split("-").map(Number);
+            matchesPrice = product.amount>=min && product.amount <=max;
+        }
+        if(matchesCategory && matchesPrice){
             let html=`<div class="card ${product.category}">
                     <img src=${product.image} alt=""
                     class="image"/>
@@ -74,14 +86,22 @@ function renderProducts(filterCategory="all"){
     grid.innerHTML+=html;
         }
 });
+
+if (grid.innerHTML === ""){
+    grid.innerHTML = "<p>No products found in this range.</p>"
+}
 }
 
 document.querySelectorAll(".categories a").forEach (link => {
     link.addEventListener("click", function(e){
         e.preventDefault();
-        const category=this.dataset.category;
-        renderProducts(category);
+        category=this.dataset.category;
+        renderProducts(category,priceSelect.value);
     });
+});
+
+priceSelect.addEventListener("change", () => {
+    renderProducts(category,priceSelect.value);
 });
 renderProducts("all");
 let cart=[];
