@@ -16,37 +16,37 @@ const products=[
         category:"fashion"
     },
     {
-        image:"images\\shoe.jpg",
+        image:"images/shoe.jpg",
         title:"Running shoes",
         amount:34000,
         category:"fashion"
     },
     {
-        image:"images\\glasses.jpg",
+        image:"images/glasses.jpg",
         title:"Sunglasses",
         amount:500,
-        category:"accessorries"
+        category:"accessories"
     },
     {
-        image:"images\\headphones.jpeg",
+        image:"images/headphones.jpeg",
         title:"Wireless Headphones",
         amount:3400,
         category:"electronics"
     },
     {
-        image:"images\\smartwatch.jpeg",
+        image:"images/smartwatch.jpeg",
         title:"Smart Watch",
         amount:2999,
         category:"electronics"
     },
     {
-        image:"images\\leatherbag.jpeg",
+        image:"images/leatherbag.jpeg",
         title:"Leather Handbag",
         amount:3499,
         category:"fashion"
     },
     {
-        image:"images\\necklace.jpeg",
+        image:"images/necklace.jpeg",
         title:"Necklace",
         amount:1199,
         category:"accessories"
@@ -66,7 +66,7 @@ function renderProducts(filterCategory="all",priceRange="all"){
 
         if (priceRange !== "all"){
             const [min,max]= priceRange.split("-").map(Number);
-            matchesPrice = product.amount>=min && product.amount <=max;
+            matchesPrice = product.amount>=min && product.amount <=max;        
         }
         if(matchesCategory && matchesPrice){
             let html=`<div class="card ${product.category}">
@@ -122,3 +122,6 @@ document.addEventListener("click", function(e){
 
 }
 });
+console.log("working");
+
+
